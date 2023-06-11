@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4120FE6B2A365CF50061EE86 /* BudgetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4120FE6A2A365CF50061EE86 /* BudgetManager.swift */; };
+		4120FE6D2A365ED10061EE86 /* BudgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4120FE6C2A365ED10061EE86 /* BudgetModel.swift */; };
 		413CA72E2A1A6BDD00818D03 /* BudgetPalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413CA72D2A1A6BDD00818D03 /* BudgetPalApp.swift */; };
 		413CA7302A1A6BDD00818D03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413CA72F2A1A6BDD00818D03 /* ContentView.swift */; };
 		413CA7322A1A6BDF00818D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413CA7312A1A6BDF00818D03 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4120FE6A2A365CF50061EE86 /* BudgetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManager.swift; sourceTree = "<group>"; };
+		4120FE6C2A365ED10061EE86 /* BudgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetModel.swift; sourceTree = "<group>"; };
 		413CA72A2A1A6BDD00818D03 /* BudgetPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		413CA72D2A1A6BDD00818D03 /* BudgetPalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPalApp.swift; sourceTree = "<group>"; };
 		413CA72F2A1A6BDD00818D03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				4169E16E2A361A510020FE2E /* EnterValueView.swift */,
 				4169E1702A361B110020FE2E /* DisplayOutFlowView.swift */,
 				4169E1722A361CEB0020FE2E /* BudgetView.swift */,
+				4120FE6A2A365CF50061EE86 /* BudgetManager.swift */,
+				4120FE6C2A365ED10061EE86 /* BudgetModel.swift */,
 			);
 			path = "Budget ";
 			sourceTree = "<group>";
@@ -326,12 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4120FE6D2A365ED10061EE86 /* BudgetModel.swift in Sources */,
 				41435FC02A3493C1006DD63C /* StartUpView.swift in Sources */,
 				41435FBE2A3492EB006DD63C /* SignUpView.swift in Sources */,
 				41A9A9B42A35209E00F8CAD9 /* JumbotronView.swift in Sources */,
 				41435FBC2A3491E4006DD63C /* LoginView.swift in Sources */,
 				413CA7302A1A6BDD00818D03 /* ContentView.swift in Sources */,
 				4169E16F2A361A510020FE2E /* EnterValueView.swift in Sources */,
+				4120FE6B2A365CF50061EE86 /* BudgetManager.swift in Sources */,
 				4169E1712A361B110020FE2E /* DisplayOutFlowView.swift in Sources */,
 				413CA72E2A1A6BDD00818D03 /* BudgetPalApp.swift in Sources */,
 				41A9A9B12A34D9B000F8CAD9 /* TitleView.swift in Sources */,
