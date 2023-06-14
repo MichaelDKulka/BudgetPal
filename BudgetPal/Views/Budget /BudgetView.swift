@@ -23,7 +23,7 @@ struct BudgetView: View {
             JumbotronView(number: 100)
             DisplayOutFlowView(valueData: valueData)
             if showingForm {
-                EnterValueView()
+                EnterValueView(amount: $newValueData.amount, description: $newValueData.description)
                 HStack {
                     Button("Submit") {
                         valueData.append(newValueData)
@@ -56,6 +56,7 @@ struct BudgetView: View {
         }
     }
 }
+
 
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {

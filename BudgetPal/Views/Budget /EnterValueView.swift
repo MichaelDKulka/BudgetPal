@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct EnterValueView: View {
-    @State private var amount = ""
-    @State private var description = ""
+    @Binding var amount: String
+    @Binding var description: String
 
     var body: some View {
         VStack {
@@ -34,11 +34,5 @@ struct EnterValueView: View {
                 )
                 .padding()
         }
-    }
-}
-
-struct EnterValueView_Previews: PreviewProvider {
-    static var previews: some View {
-        EnterValueView()
     }
 }
