@@ -7,22 +7,46 @@
 
 import SwiftUI
 
-struct AuthView: View {
-    @State private var showSignUp = false
+struct StartUpView: View {
+    @State private var loginSuccess: Bool = false
 
     var body: some View {
-        VStack {
-            if showSignUp {
-                SignupView()
-            } else {
-                LoginView()
-            }
+        NavigationView {
+            VStack(spacing: 50) {
+                if loginSuccess {
+                    BudgetView()
+                } else {
+                    VStack {
+                        NavigationLink(destination: LoginView(loginSuccess: $loginSuccess)) {
+                            Text("Login")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 220, height: 60)
+                                .background(Color.blue)
+                                .cornerRadius(15.0)
+                        }
 
-            Button(action: {
-                showSignUp.toggle()
-            }) {
-                Text(showSignUp ? "Already have an account? Login!" : "Don't have an account? Sign Up!")
+                        NavigationLink(destination: SignupView()) {
+                            Text("Sign Up")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 220, height: 60)
+                                .background(Color.blue)
+                                .cornerRadius(15.0)
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+
+struct StartView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartUpView()
+    }
+}
+

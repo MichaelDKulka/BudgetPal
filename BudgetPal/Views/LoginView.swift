@@ -7,47 +7,50 @@
 import SwiftUI
 import FirebaseAuth
 
-struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var isLoading = false
-    @State private var isLoggedIn = false
+struct NavigationStackView: View {
+    @State private var loginSuccess = false
 
     var body: some View {
         NavigationView {
-            VStack {
-                TitleView()
-                    .padding(.bottom, 50) // Spacing between title and form
-
-                VStack {
-                    TextField("Email", text: $email)
-                        .padding()
-
-                    SecureField("Password", text: $password) // secure input for password
-                        .padding()
-
-                    Button(action: {
-                        self.login()
-                    }) {
-                        Text("Login")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(8)
-                    }
-                    .disabled(isLoading)
-
-                    if isLoading {
-                        ProgressView()
-                    }
-
-                    // Hidden NavigationLink - the destination is shown when isLoggedIn is set to true
-                    NavigationLink(destination: BudgetView(), isActive: $isLoggedIn) {
-                        EmptyView()
-                    }
-                }
+            if loginSuccess {
+                BudgetView()
+            } else {
+                LoginView(loginSuccess: $loginSuccess)
             }
         }
+    }
+}
+
+struct LoginView: View {
+    @Binding var loginSuccess: Bool
+    @State private var email = ""
+    @State private var password = ""
+    @State private var isLoading = false
+
+    var body: some View {
+        VStack {
+            TextField("Email", text: $email)
+                .padding()
+
+            SecureField("Password", text: $password)
+                .padding()
+
+            Button(action: {
+                self.login()
+            }) {
+                Text("Login")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .disabled(isLoading)
+
+            if isLoading {
+                ProgressView()
+            }
+        }
+        .navigationBarTitle("Login")
     }
 
     func login() {
@@ -60,14 +63,9 @@ struct LoginView: View {
                 print(error.localizedDescription)
             } else {
                 print("Logged in!")
-                self.isLoggedIn = true
+                loginSuccess = true
             }
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
